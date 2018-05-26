@@ -1,0 +1,21 @@
+{
+  "name": "rotary",
+  "version": "1.0.0",
+  "description": "rotary encoder",
+  "main": "rotary.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hsmptg",
+  "license": "ISC",
+  "node-red": {
+    "nodes": {
+      "rotary": "nodeRotary.js",
+      "ssd1306": "nodeSSD1306.js"
+    }
+  },
+  "dependencies": {
+    "onoff": "^3.1.0",
+    "spi-device": "^2.0.2"
+  }
+}

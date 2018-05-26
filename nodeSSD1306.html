@@ -1,0 +1,41 @@
+<script type="text/javascript">
+    RED.nodes.registerType('ssd1306', {
+        category: 'Raspberry Pi',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            spiport: {value: 1, validate:RED.validators.number()},
+            resetpin: {value: 16, validate:RED.validators.number()},
+            dcpin: {value: 19, validate:RED.validators.number()}
+        },
+        inputs:1,
+        outputs:0,
+        icon: "rpi.png",
+        label: function() {
+            return this.name||"SSD1306 LCD";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="ssd1306">
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-spiport"><i class="fa fa-tag"></i> SPI port</label>
+    <input type="text" id="node-input-spiport" placeholder="port number">
+  </div>
+  <div class="form-row">
+    <label for="node-input-resetpin"><i class="fa fa-tag"></i> Reset pin</label>
+    <input type="text" id="node-input-resetpin" placeholder="GPIO number">
+  </div>
+  <div class="form-row">
+    <label for="node-input-dcpin"><i class="fa fa-tag"></i> D_C pin</label>
+    <input type="text" id="node-input-dcpin" placeholder="GPIO number">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="ssd1306">
+  <p>A node for a SSD1306 LCD</p>
+</script>

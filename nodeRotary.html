@@ -1,0 +1,42 @@
+<script type="text/javascript">
+    RED.nodes.registerType('rotary', {
+        category: 'Raspberry Pi',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            apin: {value: 20, validate:RED.validators.number()},
+            bpin: {value: 26, validate:RED.validators.number()},
+            swpin: {value: 21, validate:RED.validators.number()}
+        },
+        inputs:0,
+        outputs:1,
+        icon: "rpi.png",
+        label: function() {
+            return this.name||"Rotary Encoder";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="rotary">
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-apin"><i class="fa fa-tag"></i> A pin</label>
+    <input type="text" id="node-input-apin" placeholder="GPIO number">
+  </div>
+  <div class="form-row">
+    <label for="node-input-bpin"><i class="fa fa-tag"></i> B pin</label>
+    <input type="text" id="node-input-bpin" placeholder="GPIO number">
+  </div>
+  <div class="form-row">
+    <label for="node-input-swpin"><i class="fa fa-tag"></i> SW pin</label>
+    <input type="text" id="node-input-swpin" placeholder="GPIO number">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="rotary">
+  <p>A node for a Rotary Encoder</p>
+  <p>2nd paragraph</p>
+</script>
